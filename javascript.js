@@ -31,11 +31,11 @@ function getHumanChoice() {
 }
 
 
-// Function to play one round
+// Function to play five round
 function playGame(humanSelection, computerSelection) {
     let humanScore = 0;
     let computerScore = 0;
-    
+    // Function to play one round
     function playRound(humanChoice, computerChoice) {
         let human_Choice = humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1).toLowerCase();
     
@@ -92,7 +92,7 @@ function playGame(humanSelection, computerSelection) {
             }
             else
             {
-                console.log(`Draw! Play another round. The result is still ${humanScore} || ${computerScore}`);
+                console.log(`Draw! The result is still ${humanScore} || ${computerScore}`);
             }
         }
     
@@ -115,9 +115,14 @@ function playGame(humanSelection, computerSelection) {
         return `Game over! Our winner is the player!`;
     }
 
-    else
+    else if (computerScore > humanScore)
     {
         return `Game over! Our winner is the computer!`;
+    }
+
+    else
+    {
+        return `Game over! Draw!`
     }
 }
 
